@@ -6,6 +6,6 @@ elif( average_score <=74):
 elif(average_score <= 90):
     print('Result is First class')
 elif(average_score <= 100):
-    print('Result is Distinction')
+    print('Result is Distinction :')
 else:
     print('Invalid input enetered')
