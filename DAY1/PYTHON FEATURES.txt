@@ -1,0 +1,27 @@
+PYTHON LANGUAGE CHARACTERISTICS
+1.Python is an interprted language not a compiled language.
+The code is taken by the interpreter and instruction is compiled
+compiled >interpreted>run
+2. in python the dt of avariable is set dynamically and hence we need not to mention the DT of a variable
+3. in python everything is an object including the functions .
+thus we can add properties to the object which are useful during the development.
+4. PYTHON syntax is very easy to use and the language is developed such that the code is very compact and highly abstract.
+5. The trade off with python is that it is slower compared with java during the runtime and very slow compared with c or c++ runtime
+6. python is very suitable for building apps that are developed on RAD SDLC.
+7. Since it is easier and faster to develop in python lot of modules are built for various domains and programming dimensions analytics we have numpy,pandas and for data visualization we have matplotlib etc
+8. pythongives built in data structure like 
+list: mutable and ordered
+set: immutable and unordereed cant be indexed 
+tuple: immutable and ordered
+dictionary: key values pairs (mutable and ordered)
+along with above string type is implemented all these have good amount of methods to perform various operations .
+9. python allows us to use the ordered DS with negatuve indexing
+10. we can create a list of lists or list of elements that are of different types such as set ,dictionary,str' etc.
+12. we have rge listc comprehension map method and lambda expression
+
+ASSIGNMENT 
+13. Python provides interfaces to all major commercial databases like POSTGRES, MY SQL, SQLITE. 
+14.Python has an extensive standard library available for anyone to use. This means that 
+programmers don’t have to write their code for every single thing unlike other programming languages.  
+There are libraries for image manipulation, databases, unit-testing, expressions
+ and a lot of other functionalities

@@ -1,0 +1,133 @@
+What is the alternative implementation of function overloading in Python?
+Ans: Python doesn't support traditional function overloading, it provides flexible mechanisms like default arguments, variable-length arguments, type checking, and the singledispatch decorator to achieve similar behavior. 
+These techniques allow you to handle different types or numbers of arguments in a single function.
+
+2.Why there is no implicit type casting in Python ?
+
+Ans: Python's lack of implicit type casting is a deliberate design choice to promote code clarity, safety, and readability. By requiring explicit type conversions, Python helps prevent errors, maintain precision, and ensure that the programmer is fully aware of the types being used and manipulated in their code. This approach aligns with Python's overall philosophy of simplicity and explicitness.
+Implicit type casting can sometimes lead to unexpected behavior and subtle bugs. By requiring explicit type casting, Python ensures that the programmer is aware of the type conversions happening in the code, reducing the risk of unintended consequences.
+Python emphasizes code readability and the principle of "explicit is better than implicit" By making type conversions explicit, Python code becomes more readable and easier to understand.
+Implicit type casting can sometimes lead to loss of precision, especially when dealing with floating-point and integer arithmetic.By avoiding implicit conversions, Python prevents unintended loss of data.
+Python's approach encourages type safety by making type conversions explicit. This helps maintain the integrity of data types and prevents the mixing of incompatible types.
+By avoiding implicit type casting, Python helps catch errors early in the development process. Type mismatches are flagged immediately, making debugging easier and reducing the likelihood of runtime errors.
+
+3. Why there is no ++ and -- (increment/decrement) operators in Python?
+ 
+ Ans: Increment (++) and decrement (--) operators can introduce subtle bugs and complexities in code, especially when used in expressions. Python aims to avoid these common pitfalls by not including these operators.
+ Python emphasizes code readability and simplicity. Using += 1 and -= 1 makes the intention of incrementing or decrementing a value explicit and clear
+ x = 5
+x += 1  # Increment x by 1
+print(x)  # Output: 6
+
+x -= 1  # Decrement x by 1
+print(x)  # Output: 5
+In Python, numbers (integers, floats) are immutable objects. This means that when you perform an operation on a number, a new object is created. Using ++ or -- would suggest in-place modification, which is not consistent with the immutability of numbers in Python.
+ 
+4. What is the difference between @static method and @class method?
+
+Ans: In Python, both @staticmethod and @classmethod are decorators used to define methods that belong to a class rather than to an instance of the class. However, there are key differences in how they work and what they are typically used for. 
+@staticmethod 
+ A static method is a method that does not receive an implicit first argument. It behaves just like a plain function that belongs to a class.
+ Static methods do not modify the class or instance state. They are used when you need a function that logically belongs to the class but does not need to access or modify the class or instance's attributes.
+ 
+ @classmethod 
+  A class method is a method that receives the class as an implicit first argument, typically named cls. It can modify the class state that applies across all instances of the class.
+  Class methods are often used for factory methods that instantiate an instance using alternative constructors, or to modify class-level attributes.
+  
+Implicit First Argument:
+
+@staticmethod: No implicit first argument.
+@classmethod: Receives the class itself as the first argument (cls).
+
+Access to Class/Instance:
+
+@staticmethod: Cannot access class or instance-specific data. It behaves like a regular function but belongs to the class's namespace.
+@classmethod: Can access and modify class-level data and call other class methods.
+
+Use Cases:
+
+@staticmethod: Utility functions that are related to the class but do not require class or instance data (e.g., mathematical operations).
+@classmethod: Factory methods, methods that modify class-level data, or methods that need to access other class methods.
+
+5.What is the difference between __new__() and __init__() ?
+
+Ans: 
+In Python, __new__() and __init__() are two special methods used in the process of object creation and initialization. They serve different purposes in the lifecycle of an object.
+__new__()
+Purpose: __new__() is responsible for creating a new instance of a class. It is the method called before __init__(). It is typically used for immutable objects or for customizing instance creation.
+Calling: It is called first, automatically by the Python interpreter when an object is instantiated.
+Arguments: __new__() receives the class as its first argument, followed by any additional arguments that were passed to the class constructor.
+Return: It must return a new instance of the class, usually by calling super().__new__(cls, *args, **kwargs) or another appropriate mechanism for creating instances.
+Usage: It is less commonly overridden, primarily used for subclassing immutable types like int, str, or tuple.
+
+__init__()
+Purpose: __init__() is responsible for initializing the newly created instance. It sets up the instance with the necessary initial state.
+Calling: It is called automatically after the instance has been created by __new__().
+Arguments: It receives the instance (self) as its first argument, followed by any additional arguments that were passed to the class constructor.
+Return: It does not return anything. It modifies the instance in place.
+Usage: It is commonly used to set up instance attributes and perform any initialization that is required.
+
+Creation vs. Initialization:
+
+__new__(): Handles the creation of a new instance.
+__init__(): Handles the initialization of the newly created instance.
+
+Return Value:
+
+__new__(): Must return the new instance of the class.
+__init__(): Does not return anything. It modifies the instance in place.
+
+Invocation:
+
+__new__(): Called before __init__(), usually when the class is instantiated.
+__init__(): Called after __new__(), once the instance has been created.
+
+Use Cases:
+
+__new__(): Useful for customizing instance creation, especially for immutable types.
+__init__(): Commonly used for setting up instance attributes and other initialization tasks.
+
+6. What is the syntax to use switch-case in Python. Given an example.
+Ans: Switch Case in Python is a selection control statement
+A common way to implement a switch statement in Python is to use a dictionary to map cases to their corresponding actions.
+
+def run_case(case):
+    options = {
+        'case_1': case_1,
+        'case_2': case_2,
+        'case_3': case_3
+    }
+    options.get(case, default)()
+
+def case_1():
+    print("Running case 1")
+
+def case_2():
+    print("Running case 2")
+
+def case_3():
+    print("Running case 3")
+
+def default():
+    print("Invalid case")
+
+run_case('case_1') # Output: Running case 1
+run_case('case_2') # Output: Running case 2
+run_case('case_4') # Output: Invalid case
+
+7. Can the key within a dictionary be a composite value like a list or tuple, or should it be an atomic value such as number or string?
+Ans: 
+In Python, dictionary keys must be immutable and hashable. Therefore:
+
+Atomic values like numbers (integers, floats) and strings can be used as dictionary keys.
+Tuples can be used as dictionary keys, provided all elements within the tuple are also immutable and hashable.
+Lists, on the other hand, cannot be used as dictionary keys because they are mutable and therefore not hashable.
+Valid Dictionary Keys -Number and String Keys:
+my_dict = {
+    1: "one",
+    2: "two",
+    "three": 3
+}Tuple Keys: my_dict = {
+    (1, 2): "tuple 1",
+    (3, 4): "tuple 2"
+}
