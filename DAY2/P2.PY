@@ -1,18 +1,17 @@
-# Function to find the sum of even-placed digits
-def sum_even_placed_digits(number):
-    # Convert the number to a string
-    number_str = str(number)
-    # Initialize the sum
-    sum_even_places = 0
-    # Loop through the digits by their index
-    for index, digit in enumerate(number_str):
-        # Check if the index is even (0-based indexing)
-        if index % 2 == 0:
-            # Add the digit to the sum (convert to integer)
-            sum_even_places += int(digit)
-    return sum_even_places
-
-# Example usage
+#Find sum of Even placed digits in a number
+# Input from the user
 number = input("Enter a number: ")
-result = sum_even_placed_digits(number)
-print(f"Sum of even-placed digits in {number}: {result}")
+
+# Initialize sum
+sum_even_position_digits = 0
+
+# Iterate over the digits and their indices
+for index in range(len(number)):
+    # Check if the position (index) is even
+    if index % 2 == 0:
+        # Convert the digit to an integer and add it to the sum
+        sum_even_position_digits += int(number[index])
+
+# Print the result
+print(f"Sum of digits in even positions: {sum_even_position_digits}")
+

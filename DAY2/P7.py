@@ -10,7 +10,6 @@ def print_pascals_triangle(n):
         for k in range(i + 1):
             print(num, end=" ")
             num = num * (i - k) // (k + 1)
-        
         # Move to the next line
         print()
 
