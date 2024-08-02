@@ -7,7 +7,7 @@ for i in range(2, math.ceil(math.sqrt(input_number)+1)):
   prime = False
   break # break the loop
  if prime:
- print(f'{input_number} is Prime number')
+print(f'{input_number} is Prime number'):
 
  else:
  print(f'{input_number} is not a Prime number')

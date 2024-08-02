@@ -11,7 +11,8 @@ for i in range(n):
     strings.append(string)
 
 # Initialize variables to store the smallest and biggest strings
-# assuming the first string is both the smallest and the biggest
+#
+assuming the first string is both the smallest and the biggest
 smallest = strings[0]
 biggest = strings[0]
 
