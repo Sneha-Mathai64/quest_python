@@ -23,7 +23,6 @@ def find_nth_fibo_term(n):
         thrid_number  = 0
 
         count = 2
-
         while count <= n:
 
             thrid_number = first_number + second_number
