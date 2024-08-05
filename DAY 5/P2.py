@@ -1,13 +1,8 @@
 # Program to create 2D Array, that is, a Matrix(using List) and add it to another Matrix and print the sum Matrix.
 
-
-
 rows = int(input('Enter number of rows of the Matrix: ')) #enter the number of rows
 
-
-columns = int(input('Enter number of columns of the Matrix: ')) #enter the no of columns
-
-
+columns = int(input('Enter number of columns of the Matrix: ')) #enter the no of column
 
 matrix1 = [] # create an empty matrix to store 
 
@@ -23,8 +18,6 @@ for i in range(rows): #the loop iterates through rows
 
     matrix1.append(row_numbers) #adding to matrix one
 
-
-
 for row in matrix1: #to print ths matrix
 
     for number in row: #loop to print each number in the row
@@ -33,13 +26,9 @@ for row in matrix1: #to print ths matrix
 
     print()#print a newline after each row is completed
 
-
-
 rows = int(input('Enter number of rows of the Matrix2: '))
 
 columns = int(input('Enter number of columns of the Matrix2: '))
-
-
 
 matrix2 = []
 
@@ -54,7 +43,6 @@ for i in range(rows):
         row_numbers.append(int(input()))
 
     matrix2.append(row_numbers)
-
 
 
 print('Matrix1 is:')

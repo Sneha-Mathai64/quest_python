@@ -10,15 +10,11 @@ Now read such N matrices and add them all to the 3D Array
 
 '''
 
-
-
 matrices = int(input('Enter the number of Matrices in 3D array: '))
 
 rows = int(input('Enter number of rows of each Matrix: '))
 
 columns = int(input('Enter number of columns of each row: '))
-
-
 
 array_3d = []
 
@@ -39,7 +35,6 @@ for i in range(matrices):
         matrix.append(row)
 
     array_3d.append(matrix)
-
 
 print('3D MATRIX IS :')
 
