@@ -1,0 +1,117 @@
+variables
+ A variable is a named storage location in memory that can hold a value. This value can be changed during program execution.
+ Variables do not need to be declared with any particular type, and can even change type after they have been set.
+ 
+x = 5
+y = "John"
+print(x)  #output:5       
+print(y)  #output:John
+-----------------------------------------------------------------------------
+If we want to specify the data type of a variable, this can be done with casting 
+
+x = str(3)    # x will be '3'
+y = int(3)    # y will be 3
+z = float(3)  # z will be 3.0
+---------------------------------------------------------------------------------
+we can get the data type of a variable with the type() function.
+
+x = 5             
+y = "John"
+print(type(x))          #o/p: <class 'int'>
+print(type(y))          #o/p: <class 'str'>
+--------------------------------------------------------------------------------
+python is case-sensitive
+a = 4
+A = "Sally"
+#A will not overwrite a
+------------------------------------------------------------------------
+Global Variables
+Variables that are created outside of a function (as in all of the examples in the previous pages) are known as global variables.
+
+x = "awesome"
+
+def myfunc():
+  print("Python is " + x)
+
+myfunc()
+o/p: Python is awesome
+--------------------------------------------------------------------------------
+The Global Keyword
+Normally, when you create a variable inside a function, that variable is local, and can only be used inside that function.
+To create a global variable inside a function, you can use the global keyword.
+
+def myfunc():
+  global x
+  x = "fantastic"
+
+myfunc()
+
+print("Python is " + x)
+o/p : Python is fantastic
+
+To change the value of a global variable inside a function, refer to the variable by using the global keyword:
+
+x = "awesome"
+def myfunc():
+  global x
+  x = "fantastic"
+myfunc()
+print("Python is " + x)
+
+o/p:Python is fantastic
+     
+x = "awesome"
+def myfunc():
+  global x
+  x = "fantastic"
+print("Python is " + x)   #Before the function call, this statement prints the current value of the global variable x, which is "awesome".
+                           #Output: "Python is awesome"
+myfunc()
+print("Python is " + x)
+
+o/p: Python is awesome
+     Python is fantastic
+-------------------------------------------------------------------------
+ASSIGNMENTS:
+
+Tell about "file" argument in print method.
+
+sep in in print: sep: can change the separator between the values. 
+
+print("Hello", "world", 123, sep="-")
+which will print:Hello-world-123
+
+end: can change what is printed at the end of the output.
+print("Hello", end=" ")
+print("world")
+which will print : Hello world
+
+file: user can redirect the output to a file or another stream
+
+------------------------------------------------------------------------------
+round() Function
+
+Rounding to the Nearest Integer
+print(round(4.5))  # Outputs: 4 (rounds to the nearest even number)
+print(round(5.5))  # Outputs: 6 (rounds to the nearest even number)
+print(round(4.4))  # Outputs: 4
+print(round(4.6))  # Outputs: 5
+
+Rounding to a Specific Number of Decimal Places
+print(round(3.14159, 2))  # Outputs: 3.14 (rounds to 2 decimal places)
+print(round(3.14159, 3))  # Outputs: 3.142 (rounds to 3 decimal places)
+
+Using math Module for Different Rounding Methods
+The math module provides additional rounding methods if you need different rounding behavior
+
+math.floor()
+Rounds down to the nearest integer.
+
+import math
+print(math.floor(4.9))  # Outputs: 4
+
+math.ceil()
+Rounds up to the nearest integer.
+
+import math
+print(math.ceil(4.1))  # Outputs: 5

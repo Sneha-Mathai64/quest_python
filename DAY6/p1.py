@@ -1,28 +1,38 @@
-def check_parentheses(p_str):
-    stack = []
-    pair_count = 0
+def check_parentheses(paranthesis):
 
-    try:
-        for char in p_str:
-            if char == '(':
-                stack.append(char)
-            elif char == ')':
-                if stack:
-                    stack.pop()
-                    pair_count += 1
-                else:
-                    raise ValueError("improper arrangement")
-        
-        if stack:
-            raise ValueError("improper arrangement")
-    except ValueError as e:
-        return str(e)
-    
-    return f"{pair_count} pairs"
+    count1=0
 
-# Test cases
-print(check_parentheses("((()()))"))  # Output: 4 pairs
-print(check_parentheses("(()))"))     # Output: improper arrangement
+    count2=0
 
-    
+    for i in range(len(paranthesis)):
+
+        if paranthesis[i] == '(':
+
+            count1 += 1
+
+        elif paranthesis[i] == ')':
+
+            count2 += 1
+
+            if count2 > count1 :
+
+                print('Improper arrangement')
+
+                break
+
+        else:
+
+            print('Invalid input')
+
+   
+
+    if count1 == count2:
+
+        return print(f'{count1} pairs')
+
+     
+
+n_paranthesis = input('Enter paranthesis: ')
+
+check_parentheses(n_paranthesis)    
     
