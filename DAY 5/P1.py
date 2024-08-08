@@ -1,8 +1,7 @@
 # Program to create 1D Array (List) and find biggest and smallest numbers in it.
-import pdb
 
-pdb.set_trace()  # To run the code in debugger mode 
 n = int(input('Enter size of the Array: '))
+
 array = []
 
 print(f'Enter {n} numbers of the Array')
@@ -11,11 +10,15 @@ for i in range(n):
 
     array.append(int(input()))
 
+
+
 print('Array = ', array)
 
 small_num = array[0]
 
 big_num = array[0]
+
+
 
 for i in range(1, n):
 
