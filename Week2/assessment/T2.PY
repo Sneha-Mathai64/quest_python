@@ -22,6 +22,5 @@ class Non_Vegetarian(Eatable):
     def __init__(self, carbs, fat, protein, isBoneless):
         Eatable.__init__(self, carbs, fat, protein, isBoneless)
         self.isBoneless = isBoneless
-
-vegetable = Vegetarian()
-meat = NonVegetarian()
+veg1 = Vegeterian()
+NonVeg1 = NonVegeterian()

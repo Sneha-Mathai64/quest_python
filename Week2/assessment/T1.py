@@ -18,7 +18,7 @@ try:
 except:
     print("file with same name already exists")
 
-file = open("source/NEWfile.txt","w")
+file = open("source/file1.txt","w")
 file.close()
 
-shutil.copyfile("source/Newfile.txt", "destination/file1.txt")
+shutil.copyfile("source/file1.txt", "destination/file2.txt")
