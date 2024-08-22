@@ -1,0 +1,2880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.6.0 on win32)" generated="20240822 08:44:22.010" rpa="false" schemaversion="4">
+<suite id="s1" name="P4" source="D:\python_learning\quest_python\week3\P4.robot">
+<test id="s1-t1" name="TC-001 Verify Initial toggle to shortest duration" line="15">
+<kw name="Open Make My Trip As">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240822 08:44:22.527" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20240822 08:44:22.527" endtime="20240822 08:44:24.486"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240822 08:44:24.486" endtime="20240822 08:44:24.590"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${urlCustomer}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240822 08:44:24.591" level="INFO">Opening url 'https://www.makemytrip.com/'</msg>
+<status status="PASS" starttime="20240822 08:44:24.590" endtime="20240822 08:44:26.923"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240822 08:44:31.926" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240822 08:44:26.923" endtime="20240822 08:44:31.926"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//span[@data-cy="closeModal"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:31.926" endtime="20240822 08:44:31.980"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//span[@data-cy="closeModal"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:31.982" level="INFO">Clicking element '//span[@data-cy="closeModal"]'.</msg>
+<status status="PASS" starttime="20240822 08:44:31.982" endtime="20240822 08:44:32.144"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:22.527" endtime="20240822 08:44:32.144"/>
+</kw>
+<kw name="Search Buses">
+<arg>${from}</arg>
+<arg>${to}</arg>
+<kw name="Split String" library="String">
+<var>${day}</var>
+<var>${month}</var>
+<arg>${date}</arg>
+<arg>${SPACE}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20240822 08:44:32.144" level="INFO">${day} = "Today's</msg>
+<msg timestamp="20240822 08:44:32.144" level="INFO">${month} = Date"</msg>
+<status status="PASS" starttime="20240822 08:44:32.144" endtime="20240822 08:44:32.144"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//li[@class='menu_Buses']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:32.144" endtime="20240822 08:44:32.186"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//li[@class='menu_Buses']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:32.186" level="INFO">Clicking element '//li[@class='menu_Buses']'.</msg>
+<status status="PASS" starttime="20240822 08:44:32.186" endtime="20240822 08:44:32.331"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>fromCity</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:32.332" endtime="20240822 08:44:32.609"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>fromCity</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:32.612" level="INFO">Clicking element 'fromCity'.</msg>
+<status status="PASS" starttime="20240822 08:44:32.611" endtime="20240822 08:44:32.736"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@placeholder="From"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:32.736" endtime="20240822 08:44:33.078"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@placeholder="From"]</arg>
+<arg>${from}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:33.079" level="INFO">Typing text 'Coimbatore' into text field '//input[@placeholder="From"]'.</msg>
+<status status="PASS" starttime="20240822 08:44:33.079" endtime="20240822 08:44:33.231"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[contains(@class, 'autosuggest')]//span[contains(text(),'${from},')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:33.231" endtime="20240822 08:44:33.818"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[contains(@class, 'autosuggest')]//span[contains(text(),'${from},')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:33.818" level="INFO">Clicking element '//div[contains(@class, 'autosuggest')]//span[contains(text(),'Coimbatore,')]'.</msg>
+<status status="PASS" starttime="20240822 08:44:33.818" endtime="20240822 08:44:33.919"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>toCity</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:33.919" endtime="20240822 08:44:33.955"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>toCity</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>toCity</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:33.955" level="INFO">Clicking element 'toCity'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240822 08:44:35.672" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-63.png"&gt;&lt;img src="selenium-screenshot-63.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240822 08:44:35.094" endtime="20240822 08:44:35.672"/>
+</kw>
+<msg timestamp="20240822 08:44:35.672" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input id="toCity" data-cy="toCityVal" type="text" class="bussw_inputField font30 latoBlack" readonly="" value="Kanpur, Uttar Pradesh"&gt; is not clickable at point (1095, 296). Other element would receive the click: &lt;input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1" class="react-autosuggest__input react-autosuggest__input--open react-autosuggest__input--focused" placeholder="To" title="To" value=""&gt;
+  (Session info: chrome=127.0.6533.120)
+</msg>
+<status status="FAIL" starttime="20240822 08:44:33.955" endtime="20240822 08:44:35.686"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:33.955" endtime="20240822 08:44:35.686"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//input[@placeholder="To"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:35.686" endtime="20240822 08:44:35.720"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@placeholder="To"]</arg>
+<arg>${to}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:35.721" level="INFO">Typing text 'Trivandrum' into text field '//input[@placeholder="To"]'.</msg>
+<status status="PASS" starttime="20240822 08:44:35.720" endtime="20240822 08:44:35.923"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[contains(@class, 'autosuggest')]//span[contains(text(),'${to},') or contains(text(),'(${to}),')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:35.923" endtime="20240822 08:44:36.400"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[contains(@class, 'autosuggest')]//span[contains(text(),'${to},') or contains(text(),'(${to}),')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:36.401" level="INFO">Clicking element '//div[contains(@class, 'autosuggest')]//span[contains(text(),'Trivandrum,') or contains(text(),'(Trivandrum),')]'.</msg>
+<status status="PASS" starttime="20240822 08:44:36.400" endtime="20240822 08:44:36.519"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>travelDate</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:36.519" endtime="20240822 08:44:36.549"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>travelDate</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>travelDate</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:36.549" level="INFO">Clicking element 'travelDate'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240822 08:44:38.024" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-64.png"&gt;&lt;img src="selenium-screenshot-64.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240822 08:44:37.706" endtime="20240822 08:44:38.025"/>
+</kw>
+<msg timestamp="20240822 08:44:38.025" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input id="travelDate" type="text" data-cy="travelDateVal" class="bussw_inputField font20" readonly="" value=""&gt; is not clickable at point (1432, 293). Other element would receive the click: &lt;div class="calHeading makeFlex"&gt;...&lt;/div&gt;
+  (Session info: chrome=127.0.6533.120)
+</msg>
+<status status="FAIL" starttime="20240822 08:44:36.549" endtime="20240822 08:44:38.025"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:36.549" endtime="20240822 08:44:38.025"/>
+</kw>
+<kw name="Set Variable If" library="BuiltIn">
+<var>${dateLocator}</var>
+<arg>${date}=="Today's Date"</arg>
+<arg>//div/ancestor::div[@class='DayPicker-Month']//div[@aria-Selected="true"]</arg>
+<arg>//div[contains(text(),'${month}')]/ancestor::div[@class='DayPicker-Month']//div[contains(text(),'${day}')]</arg>
+<doc>Sets variable based on the given condition.</doc>
+<msg timestamp="20240822 08:44:38.025" level="INFO">${dateLocator} = //div/ancestor::div[@class='DayPicker-Month']//div[@aria-Selected="true"]</msg>
+<status status="PASS" starttime="20240822 08:44:38.025" endtime="20240822 08:44:38.025"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dateLocator}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:38.025" endtime="20240822 08:44:38.061"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${dateLocator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:38.064" level="INFO">Clicking element '//div/ancestor::div[@class='DayPicker-Month']//div[@aria-Selected="true"]'.</msg>
+<status status="PASS" starttime="20240822 08:44:38.061" endtime="20240822 08:44:38.151"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>search_button</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>search_button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:38.153" level="INFO">Clicking element 'search_button'.</msg>
+<status status="PASS" starttime="20240822 08:44:38.153" endtime="20240822 08:44:39.833"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:38.153" endtime="20240822 08:44:39.833"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[@class="busListingContainer"]//p[contains(text(),'found')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:39.833" endtime="20240822 08:44:39.872"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:32.144" endtime="20240822 08:44:39.872"/>
+</kw>
+<kw name="Toggle Fastest Sorting And Validate">
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>//div[@id="toggle_buses" and not(contains(@class,'active'))]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@id="toggle_buses" and not(contains(@class,'active'))]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:39.874" level="INFO">Clicking element '//div[@id="toggle_buses" and not(contains(@class,'active'))]'.</msg>
+<status status="PASS" starttime="20240822 08:44:39.873" endtime="20240822 08:44:40.069"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:39.873" endtime="20240822 08:44:40.069"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@class="makeFlex hrtlCenter"]//li[contains(text(), 'Fastest')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.070" level="INFO">Clicking element '//div[@class="makeFlex hrtlCenter"]//li[contains(text(), 'Fastest')]'.</msg>
+<status status="PASS" starttime="20240822 08:44:40.069" endtime="20240822 08:44:40.259"/>
+</kw>
+<kw name="Wait Until Buses Are Loaded">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>//div[@class="loader"]</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20240822 08:44:40.259" endtime="20240822 08:44:40.279"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[@class="busCardContainer "]//div[contains(@class,"makeFlex false")][1]</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:40.280" endtime="20240822 08:44:40.304"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//div[contains(@class,'secondaryTxt')]</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240822 08:44:40.304" endtime="20240822 08:44:40.317"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.259" endtime="20240822 08:44:40.317"/>
+</kw>
+<kw name="Get Bus Durations of KSRTC">
+<var>@{durationsofKsrtc}</var>
+<kw name="Create List" library="BuiltIn">
+<var>${durationsofKsrtc}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240822 08:44:40.317" level="INFO">${durationsofKsrtc} = []</msg>
+<status status="PASS" starttime="20240822 08:44:40.317" endtime="20240822 08:44:40.317"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:40.317" endtime="20240822 08:44:40.350"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${numberOfBuses}</var>
+<arg>//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt']</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.354" level="INFO">${numberOfBuses} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:40.350" endtime="20240822 08:44:40.354"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${numberOfBuses}</var>
+<arg>$numberOfBuses+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.365" level="INFO">${numberOfBuses} = 9</msg>
+<status status="PASS" starttime="20240822 08:44:40.354" endtime="20240822 08:44:40.365"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>1</value>
+<value>${numberOfBuses}</value>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.397" level="INFO">${durationText} = 07hrs 39mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.365" endtime="20240822 08:44:40.397"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.397" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.397" endtime="20240822 08:44:40.397"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.397" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.397" endtime="20240822 08:44:40.397"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.397" level="INFO">${hoursText} = 07</msg>
+<status status="PASS" starttime="20240822 08:44:40.397" endtime="20240822 08:44:40.397"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.401" level="INFO">${hours} = 7</msg>
+<status status="PASS" starttime="20240822 08:44:40.401" endtime="20240822 08:44:40.401"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.401" level="INFO">${minutesText} = 39</msg>
+<status status="PASS" starttime="20240822 08:44:40.401" endtime="20240822 08:44:40.401"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.401" level="INFO">${minutes} = 39</msg>
+<status status="PASS" starttime="20240822 08:44:40.401" endtime="20240822 08:44:40.401"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.401" level="INFO">${totalDuration} = 459</msg>
+<status status="PASS" starttime="20240822 08:44:40.401" endtime="20240822 08:44:40.401"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.401" endtime="20240822 08:44:40.401"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.365" endtime="20240822 08:44:40.401"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.430" level="INFO">${durationText} = 08hrs 10mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.401" endtime="20240822 08:44:40.430"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.430" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.430" endtime="20240822 08:44:40.430"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.430" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.430" endtime="20240822 08:44:40.430"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.430" level="INFO">${hoursText} = 08</msg>
+<status status="PASS" starttime="20240822 08:44:40.430" endtime="20240822 08:44:40.430"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.430" level="INFO">${hours} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:40.430" endtime="20240822 08:44:40.430"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.430" level="INFO">${minutesText} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:40.430" endtime="20240822 08:44:40.430"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.430" level="INFO">${minutes} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:40.430" endtime="20240822 08:44:40.430"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.430" level="INFO">${totalDuration} = 490</msg>
+<status status="PASS" starttime="20240822 08:44:40.430" endtime="20240822 08:44:40.430"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.430" endtime="20240822 08:44:40.430"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.401" endtime="20240822 08:44:40.430"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.452" level="INFO">${durationText} = 10hrs 35mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.430" endtime="20240822 08:44:40.452"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.452" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.452" endtime="20240822 08:44:40.452"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.452" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.452" endtime="20240822 08:44:40.452"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.452" level="INFO">${hoursText} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:40.452" endtime="20240822 08:44:40.452"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.461" level="INFO">${hours} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:40.452" endtime="20240822 08:44:40.461"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.461" level="INFO">${minutesText} = 35</msg>
+<status status="PASS" starttime="20240822 08:44:40.461" endtime="20240822 08:44:40.461"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.461" level="INFO">${minutes} = 35</msg>
+<status status="PASS" starttime="20240822 08:44:40.461" endtime="20240822 08:44:40.461"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.461" level="INFO">${totalDuration} = 635</msg>
+<status status="PASS" starttime="20240822 08:44:40.461" endtime="20240822 08:44:40.461"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.461" endtime="20240822 08:44:40.461"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.430" endtime="20240822 08:44:40.461"/>
+</iter>
+<iter>
+<var name="${index}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.486" level="INFO">${durationText} = 10hrs 50mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.461" endtime="20240822 08:44:40.486"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.486" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.486" endtime="20240822 08:44:40.486"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.486" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.486" endtime="20240822 08:44:40.486"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.486" level="INFO">${hoursText} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:40.486" endtime="20240822 08:44:40.486"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.486" level="INFO">${hours} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:40.486" endtime="20240822 08:44:40.486"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.486" level="INFO">${minutesText} = 50</msg>
+<status status="PASS" starttime="20240822 08:44:40.486" endtime="20240822 08:44:40.486"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.486" level="INFO">${minutes} = 50</msg>
+<status status="PASS" starttime="20240822 08:44:40.486" endtime="20240822 08:44:40.486"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.486" level="INFO">${totalDuration} = 650</msg>
+<status status="PASS" starttime="20240822 08:44:40.486" endtime="20240822 08:44:40.486"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.486" endtime="20240822 08:44:40.486"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.461" endtime="20240822 08:44:40.486"/>
+</iter>
+<iter>
+<var name="${index}">5</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.509" level="INFO">${durationText} = 10hrs 56mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.486" endtime="20240822 08:44:40.509"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.509" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.509" endtime="20240822 08:44:40.509"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.509" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.509" endtime="20240822 08:44:40.509"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.509" level="INFO">${hoursText} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:40.509" endtime="20240822 08:44:40.509"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.509" level="INFO">${hours} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:40.509" endtime="20240822 08:44:40.509"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.509" level="INFO">${minutesText} = 56</msg>
+<status status="PASS" starttime="20240822 08:44:40.509" endtime="20240822 08:44:40.509"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.509" level="INFO">${minutes} = 56</msg>
+<status status="PASS" starttime="20240822 08:44:40.509" endtime="20240822 08:44:40.509"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.509" level="INFO">${totalDuration} = 656</msg>
+<status status="PASS" starttime="20240822 08:44:40.509" endtime="20240822 08:44:40.509"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.509" endtime="20240822 08:44:40.509"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.486" endtime="20240822 08:44:40.509"/>
+</iter>
+<iter>
+<var name="${index}">6</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.540" level="INFO">${durationText} = 11hrs 30mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.509" endtime="20240822 08:44:40.540"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.540" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.540" endtime="20240822 08:44:40.540"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.540" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.540" endtime="20240822 08:44:40.540"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.540" level="INFO">${hoursText} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:40.540" endtime="20240822 08:44:40.540"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.540" level="INFO">${hours} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:40.540" endtime="20240822 08:44:40.540"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.540" level="INFO">${minutesText} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:40.540" endtime="20240822 08:44:40.540"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.540" level="INFO">${minutes} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:40.540" endtime="20240822 08:44:40.540"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.540" level="INFO">${totalDuration} = 690</msg>
+<status status="PASS" starttime="20240822 08:44:40.540" endtime="20240822 08:44:40.540"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.540" endtime="20240822 08:44:40.540"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.509" endtime="20240822 08:44:40.540"/>
+</iter>
+<iter>
+<var name="${index}">7</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.571" level="INFO">${durationText} = 11hrs 35mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.540" endtime="20240822 08:44:40.571"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.571" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.571" endtime="20240822 08:44:40.571"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.571" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.571" endtime="20240822 08:44:40.571"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.571" level="INFO">${hoursText} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:40.571" endtime="20240822 08:44:40.571"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.571" level="INFO">${hours} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:40.571" endtime="20240822 08:44:40.571"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.571" level="INFO">${minutesText} = 35</msg>
+<status status="PASS" starttime="20240822 08:44:40.571" endtime="20240822 08:44:40.571"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.571" level="INFO">${minutes} = 35</msg>
+<status status="PASS" starttime="20240822 08:44:40.571" endtime="20240822 08:44:40.571"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.571" level="INFO">${totalDuration} = 695</msg>
+<status status="PASS" starttime="20240822 08:44:40.571" endtime="20240822 08:44:40.571"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.571" endtime="20240822 08:44:40.571"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.540" endtime="20240822 08:44:40.571"/>
+</iter>
+<iter>
+<var name="${index}">8</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.612" level="INFO">${durationText} = 11hrs 40mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.587" endtime="20240822 08:44:40.612"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.612" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.612" endtime="20240822 08:44:40.612"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.612" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.612" endtime="20240822 08:44:40.612"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.612" level="INFO">${hoursText} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:40.612" endtime="20240822 08:44:40.612"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.612" level="INFO">${hours} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:40.612" endtime="20240822 08:44:40.612"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.612" level="INFO">${minutesText} = 40</msg>
+<status status="PASS" starttime="20240822 08:44:40.612" endtime="20240822 08:44:40.612"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.612" level="INFO">${minutes} = 40</msg>
+<status status="PASS" starttime="20240822 08:44:40.612" endtime="20240822 08:44:40.612"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.612" level="INFO">${totalDuration} = 700</msg>
+<status status="PASS" starttime="20240822 08:44:40.612" endtime="20240822 08:44:40.612"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.612" endtime="20240822 08:44:40.612"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.571" endtime="20240822 08:44:40.612"/>
+</iter>
+<status status="PASS" starttime="20240822 08:44:40.365" endtime="20240822 08:44:40.612"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>KSRTC Durations: ${durationsofKsrtc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.612" level="INFO">KSRTC Durations: [459, 490, 635, 650, 656, 690, 695, 700]</msg>
+<status status="PASS" starttime="20240822 08:44:40.612" endtime="20240822 08:44:40.612"/>
+</kw>
+<msg timestamp="20240822 08:44:40.612" level="INFO">@{durationsofKsrtc} = [ 459 | 490 | 635 | 650 | 656 | 690 | 695 | 700 ]</msg>
+<status status="PASS" starttime="20240822 08:44:40.317" endtime="20240822 08:44:40.612"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>:${durationsofKsrtc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.612" level="INFO">:[459, 490, 635, 650, 656, 690, 695, 700]</msg>
+<status status="PASS" starttime="20240822 08:44:40.612" endtime="20240822 08:44:40.612"/>
+</kw>
+<kw name="Get Bus Durations of Private">
+<var>@{durationsofPrivate}</var>
+<kw name="Create List" library="BuiltIn">
+<var>${durationsofPrivate}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240822 08:44:40.618" level="INFO">${durationsofPrivate} = []</msg>
+<status status="PASS" starttime="20240822 08:44:40.618" endtime="20240822 08:44:40.618"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:40.618" endtime="20240822 08:44:40.649"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${numberOfBuses}</var>
+<arg>//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.656" level="INFO">${numberOfBuses} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:40.650" endtime="20240822 08:44:40.656"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${numberOfBuses}</var>
+<arg>$numberOfBuses+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.656" level="INFO">${numberOfBuses} = 9</msg>
+<status status="PASS" starttime="20240822 08:44:40.656" endtime="20240822 08:44:40.656"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>1</value>
+<value>${numberOfBuses}</value>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.682" level="INFO">${durationText} = 07hrs 30mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.656" endtime="20240822 08:44:40.682"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.682" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.682" endtime="20240822 08:44:40.682"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.682" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.682" endtime="20240822 08:44:40.682"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.682" level="INFO">${hoursText} = 07</msg>
+<status status="PASS" starttime="20240822 08:44:40.682" endtime="20240822 08:44:40.682"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.682" level="INFO">${hours} = 7</msg>
+<status status="PASS" starttime="20240822 08:44:40.682" endtime="20240822 08:44:40.682"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.682" level="INFO">${minutesText} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:40.682" endtime="20240822 08:44:40.682"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.682" level="INFO">${minutes} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:40.682" endtime="20240822 08:44:40.682"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.682" level="INFO">${totalDuration} = 450</msg>
+<status status="PASS" starttime="20240822 08:44:40.682" endtime="20240822 08:44:40.682"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.682" endtime="20240822 08:44:40.682"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.656" endtime="20240822 08:44:40.682"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.717" level="INFO">${durationText} = 07hrs 45mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.682" endtime="20240822 08:44:40.717"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.717" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.717" endtime="20240822 08:44:40.717"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.717" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.717" endtime="20240822 08:44:40.717"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.719" level="INFO">${hoursText} = 07</msg>
+<status status="PASS" starttime="20240822 08:44:40.717" endtime="20240822 08:44:40.719"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.719" level="INFO">${hours} = 7</msg>
+<status status="PASS" starttime="20240822 08:44:40.719" endtime="20240822 08:44:40.719"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.719" level="INFO">${minutesText} = 45</msg>
+<status status="PASS" starttime="20240822 08:44:40.719" endtime="20240822 08:44:40.719"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.719" level="INFO">${minutes} = 45</msg>
+<status status="PASS" starttime="20240822 08:44:40.719" endtime="20240822 08:44:40.719"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.719" level="INFO">${totalDuration} = 465</msg>
+<status status="PASS" starttime="20240822 08:44:40.719" endtime="20240822 08:44:40.719"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.719" endtime="20240822 08:44:40.719"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.682" endtime="20240822 08:44:40.719"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.747" level="INFO">${durationText} = 07hrs 55mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.719" endtime="20240822 08:44:40.747"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.747" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.747" endtime="20240822 08:44:40.747"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.747" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.747" endtime="20240822 08:44:40.747"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.747" level="INFO">${hoursText} = 07</msg>
+<status status="PASS" starttime="20240822 08:44:40.747" endtime="20240822 08:44:40.747"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.747" level="INFO">${hours} = 7</msg>
+<status status="PASS" starttime="20240822 08:44:40.747" endtime="20240822 08:44:40.747"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.747" level="INFO">${minutesText} = 55</msg>
+<status status="PASS" starttime="20240822 08:44:40.747" endtime="20240822 08:44:40.747"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.747" level="INFO">${minutes} = 55</msg>
+<status status="PASS" starttime="20240822 08:44:40.747" endtime="20240822 08:44:40.747"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.747" level="INFO">${totalDuration} = 475</msg>
+<status status="PASS" starttime="20240822 08:44:40.747" endtime="20240822 08:44:40.747"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.747" endtime="20240822 08:44:40.747"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.719" endtime="20240822 08:44:40.747"/>
+</iter>
+<iter>
+<var name="${index}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.779" level="INFO">${durationText} = 08hrs 15mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.747" endtime="20240822 08:44:40.779"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.779" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.779" endtime="20240822 08:44:40.779"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.779" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.779" endtime="20240822 08:44:40.779"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.779" level="INFO">${hoursText} = 08</msg>
+<status status="PASS" starttime="20240822 08:44:40.779" endtime="20240822 08:44:40.779"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.779" level="INFO">${hours} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:40.779" endtime="20240822 08:44:40.779"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.779" level="INFO">${minutesText} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:40.779" endtime="20240822 08:44:40.779"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.779" level="INFO">${minutes} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:40.779" endtime="20240822 08:44:40.779"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.779" level="INFO">${totalDuration} = 495</msg>
+<status status="PASS" starttime="20240822 08:44:40.779" endtime="20240822 08:44:40.779"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.779" endtime="20240822 08:44:40.779"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.747" endtime="20240822 08:44:40.779"/>
+</iter>
+<iter>
+<var name="${index}">5</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.809" level="INFO">${durationText} = 08hrs 15mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.779" endtime="20240822 08:44:40.809"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.809" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.809" endtime="20240822 08:44:40.809"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.809" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.809" endtime="20240822 08:44:40.809"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.809" level="INFO">${hoursText} = 08</msg>
+<status status="PASS" starttime="20240822 08:44:40.809" endtime="20240822 08:44:40.809"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.809" level="INFO">${hours} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:40.809" endtime="20240822 08:44:40.809"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.809" level="INFO">${minutesText} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:40.809" endtime="20240822 08:44:40.809"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.809" level="INFO">${minutes} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:40.809" endtime="20240822 08:44:40.809"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.809" level="INFO">${totalDuration} = 495</msg>
+<status status="PASS" starttime="20240822 08:44:40.809" endtime="20240822 08:44:40.809"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.809" endtime="20240822 08:44:40.809"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.779" endtime="20240822 08:44:40.809"/>
+</iter>
+<iter>
+<var name="${index}">6</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.835" level="INFO">${durationText} = 08hrs 30mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.809" endtime="20240822 08:44:40.835"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.835" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.835" endtime="20240822 08:44:40.835"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.835" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.835" endtime="20240822 08:44:40.835"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.835" level="INFO">${hoursText} = 08</msg>
+<status status="PASS" starttime="20240822 08:44:40.835" endtime="20240822 08:44:40.835"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.835" level="INFO">${hours} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:40.835" endtime="20240822 08:44:40.835"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.835" level="INFO">${minutesText} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:40.835" endtime="20240822 08:44:40.835"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.835" level="INFO">${minutes} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:40.835" endtime="20240822 08:44:40.835"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.835" level="INFO">${totalDuration} = 510</msg>
+<status status="PASS" starttime="20240822 08:44:40.835" endtime="20240822 08:44:40.835"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.835" endtime="20240822 08:44:40.835"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.809" endtime="20240822 08:44:40.835"/>
+</iter>
+<iter>
+<var name="${index}">7</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.860" level="INFO">${durationText} = 09hrs 05mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.835" endtime="20240822 08:44:40.864"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.864" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.864" endtime="20240822 08:44:40.864"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.865" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.864" endtime="20240822 08:44:40.865"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.865" level="INFO">${hoursText} = 09</msg>
+<status status="PASS" starttime="20240822 08:44:40.865" endtime="20240822 08:44:40.865"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.866" level="INFO">${hours} = 9</msg>
+<status status="PASS" starttime="20240822 08:44:40.865" endtime="20240822 08:44:40.866"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.866" level="INFO">${minutesText} = 05</msg>
+<status status="PASS" starttime="20240822 08:44:40.866" endtime="20240822 08:44:40.866"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.867" level="INFO">${minutes} = 5</msg>
+<status status="PASS" starttime="20240822 08:44:40.867" endtime="20240822 08:44:40.867"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.868" level="INFO">${totalDuration} = 545</msg>
+<status status="PASS" starttime="20240822 08:44:40.867" endtime="20240822 08:44:40.868"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.868" endtime="20240822 08:44:40.868"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.835" endtime="20240822 08:44:40.868"/>
+</iter>
+<iter>
+<var name="${index}">8</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.901" level="INFO">${durationText} = 09hrs 15mins</msg>
+<status status="PASS" starttime="20240822 08:44:40.868" endtime="20240822 08:44:40.901"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.901" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">${hoursText} = 09</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">${hours} = 9</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">${minutesText} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">${minutes} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">${totalDuration} = 555</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.868" endtime="20240822 08:44:40.904"/>
+</iter>
+<status status="PASS" starttime="20240822 08:44:40.656" endtime="20240822 08:44:40.904"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>Private Durations: ${durationsofPrivate}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">Private Durations: [450, 465, 475, 495, 495, 510, 545, 555]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<msg timestamp="20240822 08:44:40.904" level="INFO">@{durationsofPrivate} = [ 450 | 465 | 475 | 495 | 495 | 510 | 545 | 555 ]</msg>
+<status status="PASS" starttime="20240822 08:44:40.612" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>:${durationsofPrivate}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">:[450, 465, 475, 495, 495, 510, 545, 555]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Join Lists Using Combine Lists">
+<var>@{firstDurations}</var>
+<arg>${durationsofKsrtc}</arg>
+<arg>${durationsofPrivate}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${durationsofKsrtc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">[459, 490, 635, 650, 656, 690, 695, 700]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${durationsofPrivate}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">[450, 465, 475, 495, 495, 510, 545, 555]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${AllBusDuration}</var>
+<arg>${durationsofKsrtc}</arg>
+<arg>${durationsofPrivate}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">${AllBusDuration} = [[459, 490, 635, 650, 656, 690, 695, 700], [450, 465, 475, 495, 495, 510, 545, 555]]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${AllBusDuration}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">[[459, 490, 635, 650, 656, 690, 695, 700], [450, 465, 475, 495, 495, 510, 545, 555]]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${AllBusDuration[0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">[459, 490, 635, 650, 656, 690, 695, 700]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${AllBusDuration[1]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">[450, 465, 475, 495, 495, 510, 545, 555]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<msg timestamp="20240822 08:44:40.904" level="INFO">@{firstDurations} = [ [459, 490, 635, 650, 656, 690, 695, 700] | [450, 465, 475, 495, 495, 510, 545, 555] ]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Current list: ${firstDurations}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">Current list: [[459, 490, 635, 650, 656, 690, 695, 700], [450, 465, 475, 495, 495, 510, 545, 555]]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Validate Durations Sorted">
+<arg>${firstDurations}</arg>
+<arg>order=${ascOrder}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>Durations: ${AllBusDuration}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">Durations: [[459, 490, 635, 650, 656, 690, 695, 700], [450, 465, 475, 495, 495, 510, 545, 555]]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Copy List" library="Collections">
+<var>${sortedDurationsFinal}</var>
+<arg>${AllBusDuration}</arg>
+<doc>Returns a copy of the given list.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">${sortedDurationsFinal} = [[459, 490, 635, 650, 656, 690, 695, 700], [450, 465, 475, 495, 495, 510, 545, 555]]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Sort List" library="Collections">
+<arg>${sortedDurationsFinal[0]}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sortedDurationsFinal[0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">[459, 490, 635, 650, 656, 690, 695, 700]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Sort List" library="Collections">
+<arg>${sortedDurationsFinal[1]}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sortedDurationsFinal[1]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">[450, 465, 475, 495, 495, 510, 545, 555]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sortedDurationsFinal}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.904" level="INFO">[[459, 490, 635, 650, 656, 690, 695, 700], [450, 465, 475, 495, 495, 510, 545, 555]]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${order}' == 'descending'</arg>
+<arg>Reverse List</arg>
+<arg>${sortedDurationsFinal[0]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${order}' == 'descending'</arg>
+<arg>Reverse List</arg>
+<arg>${sortedDurationsFinal[1]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${sortedDurationsFinal}</arg>
+<arg>${AllBusDuration}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.904"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sortedDurationsFinal[0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.920" level="INFO">[459, 490, 635, 650, 656, 690, 695, 700]</msg>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.920"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sortedDurationsFinal[1]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.923" level="INFO">[450, 465, 475, 495, 495, 510, 545, 555]</msg>
+<status status="PASS" starttime="20240822 08:44:40.920" endtime="20240822 08:44:40.923"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Sorted Durations: ${sortedDurationsFinal}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:40.923" level="INFO">Sorted Durations: [[459, 490, 635, 650, 656, 690, 695, 700], [450, 465, 475, 495, 495, 510, 545, 555]]</msg>
+<status status="PASS" starttime="20240822 08:44:40.923" endtime="20240822 08:44:40.923"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:40.904" endtime="20240822 08:44:40.923"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@class="makeFlex hrtlCenter"]//li[contains(text(), 'Fastest')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:40.923" level="INFO">Clicking element '//div[@class="makeFlex hrtlCenter"]//li[contains(text(), 'Fastest')]'.</msg>
+<status status="PASS" starttime="20240822 08:44:40.923" endtime="20240822 08:44:41.041"/>
+</kw>
+<kw name="Wait Until Buses Are Loaded">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>//div[@class="loader"]</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20240822 08:44:41.042" endtime="20240822 08:44:41.057"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[@class="busCardContainer "]//div[contains(@class,"makeFlex false")][1]</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:41.058" endtime="20240822 08:44:41.082"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//div[contains(@class,'secondaryTxt')]</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240822 08:44:41.088" endtime="20240822 08:44:41.101"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.041" endtime="20240822 08:44:41.101"/>
+</kw>
+<kw name="Get Bus Durations of KSRTC">
+<var>@{durationsofKsrtc}</var>
+<kw name="Create List" library="BuiltIn">
+<var>${durationsofKsrtc}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240822 08:44:41.102" level="INFO">${durationsofKsrtc} = []</msg>
+<status status="PASS" starttime="20240822 08:44:41.102" endtime="20240822 08:44:41.102"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:41.102" endtime="20240822 08:44:41.116"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${numberOfBuses}</var>
+<arg>//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt']</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.130" level="INFO">${numberOfBuses} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:41.116" endtime="20240822 08:44:41.130"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${numberOfBuses}</var>
+<arg>$numberOfBuses+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.130" level="INFO">${numberOfBuses} = 9</msg>
+<status status="PASS" starttime="20240822 08:44:41.130" endtime="20240822 08:44:41.130"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>1</value>
+<value>${numberOfBuses}</value>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.148" level="INFO">${durationText} = 11hrs 40mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.130" endtime="20240822 08:44:41.148"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.154" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.154" endtime="20240822 08:44:41.154"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.155" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.154" endtime="20240822 08:44:41.155"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.155" level="INFO">${hoursText} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:41.155" endtime="20240822 08:44:41.155"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.155" level="INFO">${hours} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:41.155" endtime="20240822 08:44:41.155"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.155" level="INFO">${minutesText} = 40</msg>
+<status status="PASS" starttime="20240822 08:44:41.155" endtime="20240822 08:44:41.155"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.155" level="INFO">${minutes} = 40</msg>
+<status status="PASS" starttime="20240822 08:44:41.155" endtime="20240822 08:44:41.155"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.155" level="INFO">${totalDuration} = 700</msg>
+<status status="PASS" starttime="20240822 08:44:41.155" endtime="20240822 08:44:41.155"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.155" endtime="20240822 08:44:41.155"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.130" endtime="20240822 08:44:41.155"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.177" level="INFO">${durationText} = 11hrs 35mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.155" endtime="20240822 08:44:41.177"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.178" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.177" endtime="20240822 08:44:41.178"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.179" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.178" endtime="20240822 08:44:41.179"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.179" level="INFO">${hoursText} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:41.179" endtime="20240822 08:44:41.179"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.179" level="INFO">${hours} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:41.179" endtime="20240822 08:44:41.179"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.179" level="INFO">${minutesText} = 35</msg>
+<status status="PASS" starttime="20240822 08:44:41.179" endtime="20240822 08:44:41.179"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.179" level="INFO">${minutes} = 35</msg>
+<status status="PASS" starttime="20240822 08:44:41.179" endtime="20240822 08:44:41.179"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.179" level="INFO">${totalDuration} = 695</msg>
+<status status="PASS" starttime="20240822 08:44:41.179" endtime="20240822 08:44:41.179"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.179" endtime="20240822 08:44:41.179"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.155" endtime="20240822 08:44:41.179"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.195" level="INFO">${durationText} = 11hrs 30mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.179" endtime="20240822 08:44:41.195"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.202" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.202" endtime="20240822 08:44:41.202"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.202" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.202" endtime="20240822 08:44:41.202"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.202" level="INFO">${hoursText} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:41.202" endtime="20240822 08:44:41.202"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.202" level="INFO">${hours} = 11</msg>
+<status status="PASS" starttime="20240822 08:44:41.202" endtime="20240822 08:44:41.202"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.202" level="INFO">${minutesText} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:41.202" endtime="20240822 08:44:41.202"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.202" level="INFO">${minutes} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:41.202" endtime="20240822 08:44:41.202"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.202" level="INFO">${totalDuration} = 690</msg>
+<status status="PASS" starttime="20240822 08:44:41.202" endtime="20240822 08:44:41.202"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.202" endtime="20240822 08:44:41.202"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.179" endtime="20240822 08:44:41.202"/>
+</iter>
+<iter>
+<var name="${index}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.225" level="INFO">${durationText} = 10hrs 56mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.202" endtime="20240822 08:44:41.225"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.225" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.225" endtime="20240822 08:44:41.225"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.225" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.225" endtime="20240822 08:44:41.225"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.225" level="INFO">${hoursText} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:41.225" endtime="20240822 08:44:41.225"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.225" level="INFO">${hours} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:41.225" endtime="20240822 08:44:41.225"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.225" level="INFO">${minutesText} = 56</msg>
+<status status="PASS" starttime="20240822 08:44:41.225" endtime="20240822 08:44:41.225"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.225" level="INFO">${minutes} = 56</msg>
+<status status="PASS" starttime="20240822 08:44:41.225" endtime="20240822 08:44:41.225"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.225" level="INFO">${totalDuration} = 656</msg>
+<status status="PASS" starttime="20240822 08:44:41.225" endtime="20240822 08:44:41.225"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.225" endtime="20240822 08:44:41.225"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.202" endtime="20240822 08:44:41.225"/>
+</iter>
+<iter>
+<var name="${index}">5</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.245" level="INFO">${durationText} = 10hrs 50mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.225" endtime="20240822 08:44:41.250"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.250" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.250" endtime="20240822 08:44:41.250"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.250" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.250" endtime="20240822 08:44:41.250"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.250" level="INFO">${hoursText} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:41.250" endtime="20240822 08:44:41.250"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.250" level="INFO">${hours} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:41.250" endtime="20240822 08:44:41.250"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.250" level="INFO">${minutesText} = 50</msg>
+<status status="PASS" starttime="20240822 08:44:41.250" endtime="20240822 08:44:41.250"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.250" level="INFO">${minutes} = 50</msg>
+<status status="PASS" starttime="20240822 08:44:41.250" endtime="20240822 08:44:41.250"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.250" level="INFO">${totalDuration} = 650</msg>
+<status status="PASS" starttime="20240822 08:44:41.250" endtime="20240822 08:44:41.250"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.250" endtime="20240822 08:44:41.250"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.225" endtime="20240822 08:44:41.250"/>
+</iter>
+<iter>
+<var name="${index}">6</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.272" level="INFO">${durationText} = 10hrs 35mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.250" endtime="20240822 08:44:41.272"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.273" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.273" endtime="20240822 08:44:41.273"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.274" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.273" endtime="20240822 08:44:41.274"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.274" level="INFO">${hoursText} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:41.274" endtime="20240822 08:44:41.274"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.274" level="INFO">${hours} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:41.274" endtime="20240822 08:44:41.274"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.274" level="INFO">${minutesText} = 35</msg>
+<status status="PASS" starttime="20240822 08:44:41.274" endtime="20240822 08:44:41.274"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.274" level="INFO">${minutes} = 35</msg>
+<status status="PASS" starttime="20240822 08:44:41.274" endtime="20240822 08:44:41.274"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.274" level="INFO">${totalDuration} = 635</msg>
+<status status="PASS" starttime="20240822 08:44:41.274" endtime="20240822 08:44:41.274"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.274" endtime="20240822 08:44:41.274"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.250" endtime="20240822 08:44:41.274"/>
+</iter>
+<iter>
+<var name="${index}">7</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.290" level="INFO">${durationText} = 08hrs 10mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.274" endtime="20240822 08:44:41.290"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.290" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.290" endtime="20240822 08:44:41.290"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.290" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.290" endtime="20240822 08:44:41.290"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.290" level="INFO">${hoursText} = 08</msg>
+<status status="PASS" starttime="20240822 08:44:41.290" endtime="20240822 08:44:41.290"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.290" level="INFO">${hours} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:41.290" endtime="20240822 08:44:41.290"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.290" level="INFO">${minutesText} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:41.290" endtime="20240822 08:44:41.290"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.290" level="INFO">${minutes} = 10</msg>
+<status status="PASS" starttime="20240822 08:44:41.290" endtime="20240822 08:44:41.290"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.290" level="INFO">${totalDuration} = 490</msg>
+<status status="PASS" starttime="20240822 08:44:41.290" endtime="20240822 08:44:41.290"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.290" endtime="20240822 08:44:41.290"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.274" endtime="20240822 08:44:41.290"/>
+</iter>
+<iter>
+<var name="${index}">8</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//p[contains(text(),"KSRTC")]/ancestor::div[@class='makeFlex false']//div[@class='font14 secondaryTxt'])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.319" level="INFO">${durationText} = 07hrs 39mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.290" endtime="20240822 08:44:41.319"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.319" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.319" endtime="20240822 08:44:41.319"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.321" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.321"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.321" level="INFO">${hoursText} = 07</msg>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.321"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.321" level="INFO">${hours} = 7</msg>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.321"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.321" level="INFO">${minutesText} = 39</msg>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.321"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.321" level="INFO">${minutes} = 39</msg>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.321"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.321" level="INFO">${totalDuration} = 459</msg>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.321"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofKsrtc}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.321"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.290" endtime="20240822 08:44:41.321"/>
+</iter>
+<status status="PASS" starttime="20240822 08:44:41.130" endtime="20240822 08:44:41.321"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>KSRTC Durations: ${durationsofKsrtc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.321" level="INFO">KSRTC Durations: [700, 695, 690, 656, 650, 635, 490, 459]</msg>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.321"/>
+</kw>
+<msg timestamp="20240822 08:44:41.321" level="INFO">@{durationsofKsrtc} = [ 700 | 695 | 690 | 656 | 650 | 635 | 490 | 459 ]</msg>
+<status status="PASS" starttime="20240822 08:44:41.101" endtime="20240822 08:44:41.321"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>:${durationsofKsrtc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.321" level="INFO">:[700, 695, 690, 656, 650, 635, 490, 459]</msg>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.321"/>
+</kw>
+<kw name="Get Bus Durations of Private">
+<var>@{durationsofPrivate}</var>
+<kw name="Create List" library="BuiltIn">
+<var>${durationsofPrivate}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240822 08:44:41.321" level="INFO">${durationsofPrivate} = []</msg>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.321"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.343"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${numberOfBuses}</var>
+<arg>//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.351" level="INFO">${numberOfBuses} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:41.347" endtime="20240822 08:44:41.358"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${numberOfBuses}</var>
+<arg>$numberOfBuses+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.358" level="INFO">${numberOfBuses} = 9</msg>
+<status status="PASS" starttime="20240822 08:44:41.358" endtime="20240822 08:44:41.358"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>1</value>
+<value>${numberOfBuses}</value>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.372" level="INFO">${durationText} = 09hrs 15mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.358" endtime="20240822 08:44:41.372"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.381" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.381" endtime="20240822 08:44:41.381"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.381" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.381" endtime="20240822 08:44:41.381"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.381" level="INFO">${hoursText} = 09</msg>
+<status status="PASS" starttime="20240822 08:44:41.381" endtime="20240822 08:44:41.381"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.381" level="INFO">${hours} = 9</msg>
+<status status="PASS" starttime="20240822 08:44:41.381" endtime="20240822 08:44:41.381"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.381" level="INFO">${minutesText} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:41.381" endtime="20240822 08:44:41.383"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.383" level="INFO">${minutes} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:41.383" endtime="20240822 08:44:41.383"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.384" level="INFO">${totalDuration} = 555</msg>
+<status status="PASS" starttime="20240822 08:44:41.383" endtime="20240822 08:44:41.384"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.384" endtime="20240822 08:44:41.385"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.358" endtime="20240822 08:44:41.385"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.404" level="INFO">${durationText} = 09hrs 05mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.385" endtime="20240822 08:44:41.404"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.404" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.404" endtime="20240822 08:44:41.404"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.404" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.404" endtime="20240822 08:44:41.404"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.404" level="INFO">${hoursText} = 09</msg>
+<status status="PASS" starttime="20240822 08:44:41.404" endtime="20240822 08:44:41.404"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.404" level="INFO">${hours} = 9</msg>
+<status status="PASS" starttime="20240822 08:44:41.404" endtime="20240822 08:44:41.404"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.404" level="INFO">${minutesText} = 05</msg>
+<status status="PASS" starttime="20240822 08:44:41.404" endtime="20240822 08:44:41.404"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.404" level="INFO">${minutes} = 5</msg>
+<status status="PASS" starttime="20240822 08:44:41.404" endtime="20240822 08:44:41.404"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.404" level="INFO">${totalDuration} = 545</msg>
+<status status="PASS" starttime="20240822 08:44:41.404" endtime="20240822 08:44:41.404"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.404" endtime="20240822 08:44:41.404"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.385" endtime="20240822 08:44:41.404"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.438" level="INFO">${durationText} = 08hrs 30mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.404" endtime="20240822 08:44:41.438"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.439" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.439" endtime="20240822 08:44:41.439"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.439" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.439" endtime="20240822 08:44:41.439"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.439" level="INFO">${hoursText} = 08</msg>
+<status status="PASS" starttime="20240822 08:44:41.439" endtime="20240822 08:44:41.439"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.439" level="INFO">${hours} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:41.439" endtime="20240822 08:44:41.439"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.439" level="INFO">${minutesText} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:41.439" endtime="20240822 08:44:41.439"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.439" level="INFO">${minutes} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:41.439" endtime="20240822 08:44:41.439"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.439" level="INFO">${totalDuration} = 510</msg>
+<status status="PASS" starttime="20240822 08:44:41.439" endtime="20240822 08:44:41.439"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.439" endtime="20240822 08:44:41.439"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.404" endtime="20240822 08:44:41.439"/>
+</iter>
+<iter>
+<var name="${index}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.472" level="INFO">${durationText} = 08hrs 15mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.439" endtime="20240822 08:44:41.472"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.472" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.472" endtime="20240822 08:44:41.472"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.472" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.472" endtime="20240822 08:44:41.472"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.472" level="INFO">${hoursText} = 08</msg>
+<status status="PASS" starttime="20240822 08:44:41.472" endtime="20240822 08:44:41.472"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.472" level="INFO">${hours} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:41.472" endtime="20240822 08:44:41.472"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.472" level="INFO">${minutesText} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:41.472" endtime="20240822 08:44:41.472"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.472" level="INFO">${minutes} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:41.472" endtime="20240822 08:44:41.472"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.478" level="INFO">${totalDuration} = 495</msg>
+<status status="PASS" starttime="20240822 08:44:41.478" endtime="20240822 08:44:41.478"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.478" endtime="20240822 08:44:41.478"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.439" endtime="20240822 08:44:41.478"/>
+</iter>
+<iter>
+<var name="${index}">5</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.520" level="INFO">${durationText} = 08hrs 15mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.478" endtime="20240822 08:44:41.520"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.521" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.520" endtime="20240822 08:44:41.521"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.522" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.522" endtime="20240822 08:44:41.522"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.522" level="INFO">${hoursText} = 08</msg>
+<status status="PASS" starttime="20240822 08:44:41.522" endtime="20240822 08:44:41.522"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.522" level="INFO">${hours} = 8</msg>
+<status status="PASS" starttime="20240822 08:44:41.522" endtime="20240822 08:44:41.522"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.522" level="INFO">${minutesText} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:41.522" endtime="20240822 08:44:41.522"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.522" level="INFO">${minutes} = 15</msg>
+<status status="PASS" starttime="20240822 08:44:41.522" endtime="20240822 08:44:41.522"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.522" level="INFO">${totalDuration} = 495</msg>
+<status status="PASS" starttime="20240822 08:44:41.522" endtime="20240822 08:44:41.522"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.522" endtime="20240822 08:44:41.522"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.478" endtime="20240822 08:44:41.522"/>
+</iter>
+<iter>
+<var name="${index}">6</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.546" level="INFO">${durationText} = 07hrs 55mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.526" endtime="20240822 08:44:41.546"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.546" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.546" endtime="20240822 08:44:41.546"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.546" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.546" endtime="20240822 08:44:41.546"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.546" level="INFO">${hoursText} = 07</msg>
+<status status="PASS" starttime="20240822 08:44:41.546" endtime="20240822 08:44:41.546"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.546" level="INFO">${hours} = 7</msg>
+<status status="PASS" starttime="20240822 08:44:41.546" endtime="20240822 08:44:41.546"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.546" level="INFO">${minutesText} = 55</msg>
+<status status="PASS" starttime="20240822 08:44:41.546" endtime="20240822 08:44:41.546"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.546" level="INFO">${minutes} = 55</msg>
+<status status="PASS" starttime="20240822 08:44:41.546" endtime="20240822 08:44:41.546"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.546" level="INFO">${totalDuration} = 475</msg>
+<status status="PASS" starttime="20240822 08:44:41.546" endtime="20240822 08:44:41.546"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.546" endtime="20240822 08:44:41.546"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.522" endtime="20240822 08:44:41.546"/>
+</iter>
+<iter>
+<var name="${index}">7</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.568" level="INFO">${durationText} = 07hrs 45mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.546" endtime="20240822 08:44:41.568"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.568" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.568" endtime="20240822 08:44:41.568"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.568" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.568" endtime="20240822 08:44:41.568"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.574" level="INFO">${hoursText} = 07</msg>
+<status status="PASS" starttime="20240822 08:44:41.568" endtime="20240822 08:44:41.574"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.574" level="INFO">${hours} = 7</msg>
+<status status="PASS" starttime="20240822 08:44:41.574" endtime="20240822 08:44:41.574"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.575" level="INFO">${minutesText} = 45</msg>
+<status status="PASS" starttime="20240822 08:44:41.574" endtime="20240822 08:44:41.575"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.575" level="INFO">${minutes} = 45</msg>
+<status status="PASS" starttime="20240822 08:44:41.575" endtime="20240822 08:44:41.575"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.575" level="INFO">${totalDuration} = 465</msg>
+<status status="PASS" starttime="20240822 08:44:41.575" endtime="20240822 08:44:41.575"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.575" endtime="20240822 08:44:41.575"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.546" endtime="20240822 08:44:41.575"/>
+</iter>
+<iter>
+<var name="${index}">8</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${durationText}</var>
+<arg>(//div[@class="rtcEnd"]/following-sibling::div[@class='busCardContainer ']//div[@class="font14 secondaryTxt"])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240822 08:44:41.590" level="INFO">${durationText} = 07hrs 30mins</msg>
+<status status="PASS" starttime="20240822 08:44:41.575" endtime="20240822 08:44:41.590"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${hours}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.590" level="INFO">${hours} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.590" endtime="20240822 08:44:41.590"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${minutes}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240822 08:44:41.590" level="INFO">${minutes} = 0</msg>
+<status status="PASS" starttime="20240822 08:44:41.590" endtime="20240822 08:44:41.590"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${hoursText}</var>
+<arg>'''${durationText}'''.split("hrs")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.590" level="INFO">${hoursText} = 07</msg>
+<status status="PASS" starttime="20240822 08:44:41.590" endtime="20240822 08:44:41.590"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${hours}</var>
+<arg>${hoursText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.590" level="INFO">${hours} = 7</msg>
+<status status="PASS" starttime="20240822 08:44:41.590" endtime="20240822 08:44:41.590"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${minutesText}</var>
+<arg>'''${durationText}'''.split("hrs")[-1].split("mins")[0].strip()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.590" level="INFO">${minutesText} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:41.590" endtime="20240822 08:44:41.590"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${minutes}</var>
+<arg>${minutesText}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20240822 08:44:41.590" level="INFO">${minutes} = 30</msg>
+<status status="PASS" starttime="20240822 08:44:41.590" endtime="20240822 08:44:41.590"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${totalDuration}</var>
+<arg>(${hours}*60) + ${minutes}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240822 08:44:41.590" level="INFO">${totalDuration} = 450</msg>
+<status status="PASS" starttime="20240822 08:44:41.590" endtime="20240822 08:44:41.590"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${durationsofPrivate}</arg>
+<arg>${totalDuration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240822 08:44:41.590" endtime="20240822 08:44:41.590"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.575" endtime="20240822 08:44:41.590"/>
+</iter>
+<status status="PASS" starttime="20240822 08:44:41.358" endtime="20240822 08:44:41.590"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>Private Durations: ${durationsofPrivate}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.590" level="INFO">Private Durations: [555, 545, 510, 495, 495, 475, 465, 450]</msg>
+<status status="PASS" starttime="20240822 08:44:41.590" endtime="20240822 08:44:41.590"/>
+</kw>
+<msg timestamp="20240822 08:44:41.602" level="INFO">@{durationsofPrivate} = [ 555 | 545 | 510 | 495 | 495 | 475 | 465 | 450 ]</msg>
+<status status="PASS" starttime="20240822 08:44:41.321" endtime="20240822 08:44:41.602"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>:${durationsofPrivate}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.602" level="INFO">:[555, 545, 510, 495, 495, 475, 465, 450]</msg>
+<status status="PASS" starttime="20240822 08:44:41.602" endtime="20240822 08:44:41.602"/>
+</kw>
+<kw name="Join Lists Using Combine Lists">
+<var>@{secondDurations}</var>
+<arg>${durationsofKsrtc}</arg>
+<arg>${durationsofPrivate}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${durationsofKsrtc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.602" level="INFO">[700, 695, 690, 656, 650, 635, 490, 459]</msg>
+<status status="PASS" starttime="20240822 08:44:41.602" endtime="20240822 08:44:41.602"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${durationsofPrivate}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.602" level="INFO">[555, 545, 510, 495, 495, 475, 465, 450]</msg>
+<status status="PASS" starttime="20240822 08:44:41.602" endtime="20240822 08:44:41.602"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${AllBusDuration}</var>
+<arg>${durationsofKsrtc}</arg>
+<arg>${durationsofPrivate}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240822 08:44:41.602" level="INFO">${AllBusDuration} = [[700, 695, 690, 656, 650, 635, 490, 459], [555, 545, 510, 495, 495, 475, 465, 450]]</msg>
+<status status="PASS" starttime="20240822 08:44:41.602" endtime="20240822 08:44:41.602"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${AllBusDuration}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.602" level="INFO">[[700, 695, 690, 656, 650, 635, 490, 459], [555, 545, 510, 495, 495, 475, 465, 450]]</msg>
+<status status="PASS" starttime="20240822 08:44:41.602" endtime="20240822 08:44:41.602"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${AllBusDuration[0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.606" level="INFO">[700, 695, 690, 656, 650, 635, 490, 459]</msg>
+<status status="PASS" starttime="20240822 08:44:41.602" endtime="20240822 08:44:41.606"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${AllBusDuration[1]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.607" level="INFO">[555, 545, 510, 495, 495, 475, 465, 450]</msg>
+<status status="PASS" starttime="20240822 08:44:41.606" endtime="20240822 08:44:41.607"/>
+</kw>
+<msg timestamp="20240822 08:44:41.607" level="INFO">@{secondDurations} = [ [700, 695, 690, 656, 650, 635, 490, 459] | [555, 545, 510, 495, 495, 475, 465, 450] ]</msg>
+<status status="PASS" starttime="20240822 08:44:41.602" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Validate Durations Sorted">
+<arg>${secondDurations}</arg>
+<arg>order=${dscOrder}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>Durations: ${AllBusDuration}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.607" level="INFO">Durations: [[700, 695, 690, 656, 650, 635, 490, 459], [555, 545, 510, 495, 495, 475, 465, 450]]</msg>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Copy List" library="Collections">
+<var>${sortedDurationsFinal}</var>
+<arg>${AllBusDuration}</arg>
+<doc>Returns a copy of the given list.</doc>
+<msg timestamp="20240822 08:44:41.607" level="INFO">${sortedDurationsFinal} = [[700, 695, 690, 656, 650, 635, 490, 459], [555, 545, 510, 495, 495, 475, 465, 450]]</msg>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Sort List" library="Collections">
+<arg>${sortedDurationsFinal[0]}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sortedDurationsFinal[0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.607" level="INFO">[459, 490, 635, 650, 656, 690, 695, 700]</msg>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Sort List" library="Collections">
+<arg>${sortedDurationsFinal[1]}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sortedDurationsFinal[1]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.607" level="INFO">[450, 465, 475, 495, 495, 510, 545, 555]</msg>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sortedDurationsFinal}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.607" level="INFO">[[459, 490, 635, 650, 656, 690, 695, 700], [450, 465, 475, 495, 495, 510, 545, 555]]</msg>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${order}' == 'descending'</arg>
+<arg>Reverse List</arg>
+<arg>${sortedDurationsFinal[0]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Reverse List" library="Collections">
+<arg>${sortedDurationsFinal[0]}</arg>
+<doc>Reverses the given list in place.</doc>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${order}' == 'descending'</arg>
+<arg>Reverse List</arg>
+<arg>${sortedDurationsFinal[1]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Reverse List" library="Collections">
+<arg>${sortedDurationsFinal[1]}</arg>
+<doc>Reverses the given list in place.</doc>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${sortedDurationsFinal}</arg>
+<arg>${AllBusDuration}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sortedDurationsFinal[0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.607" level="INFO">[700, 695, 690, 656, 650, 635, 490, 459]</msg>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${sortedDurationsFinal[1]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.607" level="INFO">[555, 545, 510, 495, 495, 475, 465, 450]</msg>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Sorted Durations: ${sortedDurationsFinal}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240822 08:44:41.607" level="INFO">Sorted Durations: [[700, 695, 690, 656, 650, 635, 490, 459], [555, 545, 510, 495, 495, 475, 465, 450]]</msg>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:41.607" endtime="20240822 08:44:41.607"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:39.873" endtime="20240822 08:44:41.607"/>
+</kw>
+<status status="PASS" starttime="20240822 08:44:22.524" endtime="20240822 08:44:41.607"/>
+</test>
+<status status="PASS" starttime="20240822 08:44:22.010" endtime="20240822 08:44:41.622"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="P4">P4</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

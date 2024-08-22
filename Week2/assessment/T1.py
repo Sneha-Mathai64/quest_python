@@ -21,4 +21,4 @@ except:
 file = open("source/file1.txt","w")
 file.close()
 
-shutil.copyfile("source/file1.txt", "destination/file2.txt")
+shutil.move("source/file1.txt", "destination/file2.txt")
