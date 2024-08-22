@@ -2,6 +2,9 @@
 Library     SeleniumLibrary
 Library     Collections
 Library    String
+Suite Setup     Open Make My Trip As   
+Suite Teardown    Close Browser
+Test Teardown    Undo
 *** Variables ***
 ${from}    Coimbatore
 ${to}      Trivandrum
@@ -13,7 +16,6 @@ ${durationsofPrivate}
 
 *** Test Cases ***
 TC-001 Verify Initial toggle to shortest duration
-    Open Make My Trip As
     Search Buses    ${from}    ${to}
     Toggle Fastest Sorting And Validate 
   
@@ -149,3 +151,6 @@ Validate Durations Sorted
     Log      ${sortedDurationsFinal[0]} 
     Log  ${sortedDurationsFinal[1]} 
     Log   Sorted Durations: ${sortedDurationsFinal}
+Undo
+    Click Element     toggle_buses
+    Click Element    //div[@class="makeFlex hrtlCenter"]//li[contains(text(), 'Relevance')]
