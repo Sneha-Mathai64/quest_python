@@ -16,9 +16,10 @@ ${durationsofPrivate}
 
 *** Test Cases ***
 TC-001 Verify Initial toggle to shortest duration
+    Open Make My Trip As
     Search Buses    ${from}    ${to}
     Toggle Fastest Sorting And Validate 
-  
+    
 *** Keywords ***
 Open Make My Trip As
     Open Browser     browser=chrome
